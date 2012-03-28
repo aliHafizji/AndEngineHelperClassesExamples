@@ -17,40 +17,28 @@ package org.andengine.helperclasses.examples;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import org.andengine.engine.camera.Camera;
-import org.andengine.engine.options.EngineOptions;
-import org.andengine.engine.options.EngineOptions.ScreenOrientation;
-import org.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
+
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.scene.Scene.IOnSceneTouchListener;
 import org.andengine.entity.sprite.Sprite;
+import org.andengine.helperclasses.LevelSelector;
+import org.andengine.helperclasses.LevelSelector.Padding;
+import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.texture.Texture;
 import org.andengine.opengl.texture.bitmap.BitmapTexture;
 import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.opengl.texture.region.TextureRegionFactory;
-import org.andengine.ui.activity.SimpleBaseGameActivity;
 import org.andengine.util.adt.io.in.IInputStreamOpener;
 import org.andengine.util.debug.Debug;
-import org.andengine.helperclasses.LevelSelector;
-import org.andengine.helperclasses.LevelSelector.Padding;
-import org.andengine.input.touch.TouchEvent;
 
-public class LevelSelectorExample extends SimpleBaseGameActivity implements IOnSceneTouchListener {
+public class LevelSelectorExample extends AndEngineHelperClassesExamplesBaseClass implements IOnSceneTouchListener {
 
-	private static int CAMERA_WIDTH = 360;
-	private static int CAMERA_HEIGHT = 240;
 	private Texture mItem;
 	private ITextureRegion mItemTextureRegion;
 	
 	private ArrayList<Sprite> mLevelItems;
 	private LevelSelector mLevelSelector;
 	
-	@Override
-	public EngineOptions onCreateEngineOptions() {
-		final Camera camera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
-		return new EngineOptions(true, ScreenOrientation.LANDSCAPE_FIXED, new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT), camera);
-	}
-
 	@Override
 	protected void onCreateResources() {
 		try {

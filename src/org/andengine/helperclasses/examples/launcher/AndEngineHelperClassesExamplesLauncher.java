@@ -16,6 +16,7 @@ package org.andengine.helperclasses.examples.launcher;
 
 import java.util.ArrayList;
 
+import org.andengine.helperclasses.examples.InputTextExample;
 import org.andengine.helperclasses.examples.LevelSelectorExample;
 import org.andengine.helperclasses.examples.R;
 import org.andengine.helperclasses.examples.SliderExample;
@@ -42,6 +43,7 @@ public class AndEngineHelperClassesExamplesLauncher extends ListActivity {
 		mHelperActivityList = new ArrayList<AndEngineHelperClassesExamplesLauncher.AdapterRow>();
 		mHelperActivityList.add(new AdapterRow("Slider class example", SliderExample.class));
 		mHelperActivityList.add(new AdapterRow("Level selector example", LevelSelectorExample.class));
+		mHelperActivityList.add(new AdapterRow("Input Text example", InputTextExample.class));
 		
 		getListView().setAdapter(new HelperLauncherAdapter(this));
 		getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {

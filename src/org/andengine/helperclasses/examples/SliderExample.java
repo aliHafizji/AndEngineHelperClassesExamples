@@ -16,11 +16,6 @@ package org.andengine.helperclasses.examples;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-import org.andengine.engine.camera.Camera;
-import org.andengine.engine.options.EngineOptions;
-import org.andengine.engine.options.EngineOptions.ScreenOrientation;
-import org.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
 import org.andengine.entity.scene.Scene;
 import org.andengine.helperclasses.Slider;
 import org.andengine.helperclasses.Slider.OnSliderValueChangeListener;
@@ -28,25 +23,16 @@ import org.andengine.opengl.texture.Texture;
 import org.andengine.opengl.texture.bitmap.BitmapTexture;
 import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.opengl.texture.region.TextureRegionFactory;
-import org.andengine.ui.activity.SimpleBaseGameActivity;
 import org.andengine.util.adt.io.in.IInputStreamOpener;
 import org.andengine.util.debug.Debug;
+
 import android.util.Log;
 
-public class SliderExample extends SimpleBaseGameActivity implements OnSliderValueChangeListener {
-	
-	private static int CAMERA_WIDTH = 360;
-	private static int CAMERA_HEIGHT = 240;
+public class SliderExample extends AndEngineHelperClassesExamplesBaseClass implements OnSliderValueChangeListener {
 	
 	private Texture mSliderTexture, mThumbTexture;
 	private ITextureRegion mSliderTextureRegion, mThumbTextureRegion;
 	
-	@Override
-	public EngineOptions onCreateEngineOptions() {
-		final Camera camera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
-		return new EngineOptions(true, ScreenOrientation.LANDSCAPE_FIXED, new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT), camera);
-	}
-
 	@Override
 	protected void onCreateResources() {
 		try {
