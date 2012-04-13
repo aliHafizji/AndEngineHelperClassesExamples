@@ -18,8 +18,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import org.andengine.entity.scene.IOnSceneTouchListener;
 import org.andengine.entity.scene.Scene;
-import org.andengine.entity.scene.Scene.IOnSceneTouchListener;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.helperclasses.LevelSelector;
 import org.andengine.helperclasses.LevelSelector.Padding;
